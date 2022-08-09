@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  /* primary */
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  /* gradient bg */
+  --soft-violet: #af67e9;
+  --soft-blue: #6565e7;
+  /* text */
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  /* dividers */
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(100% 100% at 50% 0%, var(--soft-violet) 50%, var(--soft-blue) 100%);
+  min-height: 100vh;
+  height: auto; 
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  font-weight: 400;
+}
+
+hr {
+  color: var(--light-grayish-blue);
+  border-top: none;
+}
+.desktop {
+  display: none;
+}
+.ilustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: -6.5rem;
+}
+.main-ilustration{
+  margin-bottom: -5rem;
+}
+
+.container {
+  margin: 15px 10px 15px 10px;
+  min-width: 325px;
+  width: 90%;
+  max-width: 1440px;
+}
+.arrow {
+  margin-left: 6px;
+}
+.faq-container {
+  background: white;
+  padding: 3rem 1.75rem;
+  padding-top: 8rem;
+  border-radius: 25px;
+}
+.faq-container h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.faq-container p {
+  font-size: 12px;
+}
+.faq {
+  padding: 1rem 0;
+}
+.faq p{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.question {
+  color: var(--very-dark-grayish-blue);
+  cursor: pointer;
+}
+.question:hover {
+  color: var(--soft-red);
+}
+.answer{
+  color: var(--dark-grayish-blue);
+  padding-top: 1rem;
+}
+
+@media (min-width: 875px){
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  .container {
+    background-color: white;
+    background-image: url(./images/illustration-woman-online-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    max-width: 1000px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .faq-container{
+    background-color: transparent;
+    padding: 4.5rem 6rem;
+    width: 50%;
+  }
+  .faq-container h1 {
+    text-align: left;
+  }
+}
+
+/* answer display */
+.answer[data-visible='false']{
+  display: none;
+}
+.answer[data-visible='true']{
+  display: block;
+}
+.question[bold='true']{
+  font-weight: 700;
+}
+.question[bold='false']{
+  font-weight: 400;
+}
